@@ -1,6 +1,3 @@
----
-draft: "true"
----
 It's easy to chase the narrative you want, not the truth.  
   
 What stands out most  

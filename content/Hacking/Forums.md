@@ -1,15 +1,8 @@
----
-draft: "true"
----
 
 - Altenens - [https://altenens.is/](https://altenens.is/)
-    
 - Black Hat World - [https://www.blackhatworld.com/](https://www.blackhatworld.com/)
-    
 - Black Hat Pro Tools - [https://www.blackhatprotools.info/](https://www.blackhatprotools.info/)
-    
 - BreachForums - [Onion URL](http://breached26tezcofqla4adzyn22notfqwcac7gpbrleg4usehljwkgqd.onion/)
-    
 - CardVilla - [https://cardvilla.cc/](https://cardvilla.cc/)
     
 - Cracking - [https://cracking.org/](https://cracking.org/)
