@@ -1,11 +1,13 @@
 It's easy to chase the narrative you want, not the truth.  
   
-What stands out most  
+What stands out most
 Username / handle reuse – search same handle on other sites; record all matches in one sheet  
-→ usersearch[.]org (Cross-platform username search)  
-→ holehe (Email-based site registration check)  
-→ osint[.]rocks (Automated username search)  
-→ breachdirectory[.]org (Breached username check)  
+http://usersearch.org/ (Cross-platform username search)  
+https://github.com/megadose/holehe (Email-based site registration check)  
+https://osint.rocks (Automated username search)  
+https://breachdirectory.org (Breached username check) 
+https://search.censys.io/ (IP Search)
+https://www.shodan.io/ (Internet General Search)
   
 Social graph signals > single posts – pull top 10 interactors and scan for repeated overlap  
 → INSE Chrome Plugin (Extract Instagram interactor emails)  
