@@ -1,4 +1,3 @@
-If you ever need to contact me in private, don't be shy, just use my PGP key and encrypt your message and make sure to include your public key in the message.
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 mDMEaSdBdhYJKwYBBAHaRw8BAQdAh2kwAXQy40gR4IWAj3gKmwqWCRsS/AIfC7il
