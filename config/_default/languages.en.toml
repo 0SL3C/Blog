@@ -1,0 +1,15 @@
+disabled = false
+locale = "en"
+label = "English"
+weight = 1
+title = "ViiniFX's Blog"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "01 January 2006"
+logo = "virus.png"
+
+["params.author"]
+imageQuality = "100"

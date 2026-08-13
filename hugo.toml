@@ -1,0 +1,5 @@
+theme = 'blowfish'
+locale = 'en-us'
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

@@ -1,0 +1,131 @@
+colorScheme = "bloody"
+defaultAppearance = "light"
+autoSwitchAppearance = true
+enableA11y = true
+enableSearch = true
+enableCodeCopy = false
+enableStructuredBreadcrumbs = false
+replyByEmail = false
+disableImageOptimization = false
+disableImageOptimizationMD = false
+disableTextInHeader = false
+hotlinkFeatureImage = false
+fingerprintAlgorithm = "sha512"
+giteaDefaultServer = "https://git.fsfe.org"
+forgejoDefaultServer = "https://v11.next.forgejo.org"
+seo = { }
+fathomAnalytics = { }
+umamiAnalytics = { }
+selineAnalytics = { }
+buymeacoffee = { }
+verification = { }
+rssnext = { }
+advertisement = { }
+imagePosition = ""
+
+[firebase]
+apiKey = "AIzaSyBpunoHPVxjZEPkuq7QNfQ53pQLD6ANUaQ"
+authDomain = "blog-7a164.firebaseapp.com"
+projectId = "blog-7a164"
+storageBucket = "blog-7a164.firebasestorage.app"
+messagingSenderId = "189198226232"
+appId = "1:189198226232:web:5ff0129d9b533d651027cd"
+measurementId = "G-PZGRV8VE9G"
+
+[languageRedirect]
+enabled = false
+storageKey = "blowfish_preferred_language"
+browserRedirectHomeOnly = true
+storedLanguageRedirect = true
+
+[header]
+layout = "fixed-fill-blur"
+
+[footer]
+showMenu = true
+showCopyright = true
+showThemeAttribution = false
+showAppearanceSwitcher = true
+showScrollToTop = true
+
+[homepage]
+layout = "page"
+showRecent = true
+showRecentItems = 5
+showMoreLink = false
+showMoreLinkDest = "/posts/"
+cardView = false
+cardViewScreenWidth = false
+layoutBackgroundBlur = false
+disableHeroImageFilter = false
+
+[article]
+showDate = true
+showViews = true
+showLikes = true
+showDateOnlyInArticle = false
+showDateUpdated = true
+showAuthor = true
+showHero = false
+layoutBackgroundBlur = true
+layoutBackgroundHeaderSpace = true
+showBreadcrumbs = false
+showDraftLabel = true
+showEdit = false
+editAppendPath = true
+seriesOpened = false
+showHeadingAnchors = true
+showPagination = true
+invertPagination = false
+showReadingTime = false
+showTableOfContents = false
+showTaxonomies = false
+showCategories = true
+showTags = true
+showCategoriesInSecondaryColor = false
+showAuthorsBadges = false
+showWordCount = false
+showZenMode = false
+heroStyle = "basic"
+
+[list]
+showHero = false
+layoutBackgroundBlur = true
+layoutBackgroundHeaderSpace = true
+showBreadcrumbs = true
+showSummary = true
+showViews = true
+showLikes = true
+showTableOfContents = false
+showCards = false
+orderByWeight = false
+groupByYear = true
+cardView = false
+cardViewScreenWidth = false
+constrainItemsWidth = false
+
+[sitemap]
+excludedKinds = [ "taxonomy", "term" ]
+
+[taxonomy]
+showTermCount = true
+showHero = false
+layoutBackgroundBlur = true
+layoutBackgroundHeaderSpace = true
+showBreadcrumbs = false
+showViews = false
+showLikes = false
+showTableOfContents = false
+cardView = false
+
+[term]
+showHero = false
+layoutBackgroundBlur = true
+layoutBackgroundHeaderSpace = true
+showBreadcrumbs = false
+showViews = true
+showLikes = false
+showTableOfContents = true
+groupByYear = false
+cardView = false
+cardViewScreenWidth = false

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ViiniFX&#39;s Blog</title>
+    <link>/</link>
+    <description>Recent content on ViiniFX&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Thu, 13 Aug 2026 17:43:04 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rogue Planet</title>
+      <link>/posts/article1/</link>
+      <pubDate>Thu, 13 Aug 2026 17:43:04 +0100</pubDate>
+      
+      <guid>/posts/article1/</guid>
+      <description>How &lt;em&gt;NightmareEclipse&lt;/em&gt; managed to get a mixture of love/hate from security researchers, piss off Microsoft, make them speedrun a hotfix that make things even worse, then after the vulnerability was properly patched, &lt;em&gt;NightmareEclipse&lt;/em&gt; shows another ace up his sleeves. Read this blog to find out about the new 0-day &lt;strong&gt;ShieldBreak&lt;/strong&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/posts/article1/featured-anime_eyes.avif" />
+    </item>
+    
+  </channel>
+</rss>
