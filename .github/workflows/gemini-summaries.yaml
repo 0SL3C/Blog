@@ -51,7 +51,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if git ls-remote --exit-code --heads origin gemini-summaries > /dev/null; then
             git checkout -B gemini-summaries origin/gemini-summaries
-            git merge --no-edit origin/main
+            git rebase origin/main
           else
             git checkout -B gemini-summaries origin/main
           fi
@@ -69,4 +69,4 @@ jobs:
             exit 0
           fi
           git commit -m "chore: add Gemini-generated summaries"
-          git push origin gemini-summaries
+          git push --force-with-lease origin gemini-summaries
