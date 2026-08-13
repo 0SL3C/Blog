@@ -8,7 +8,7 @@ enableStructuredBreadcrumbs = false
 replyByEmail = false
 disableImageOptimization = false
 disableImageOptimizationMD = false
-disableTextInHeader = false
+disableTextInHeader = true
 hotlinkFeatureImage = false
 fingerprintAlgorithm = "sha512"
 giteaDefaultServer = "https://git.fsfe.org"
@@ -21,7 +21,8 @@ buymeacoffee = { }
 verification = { }
 rssnext = { }
 advertisement = { }
-imagePosition = ""
+imagePosition = "center"
+defaultBackgroundImage = "wallpape.jpg"
 
 [firebase]
 apiKey = "AIzaSyBpunoHPVxjZEPkuq7QNfQ53pQLD6ANUaQ"
@@ -39,7 +40,7 @@ browserRedirectHomeOnly = true
 storedLanguageRedirect = true
 
 [header]
-layout = "fixed-fill-blur"
+layout = "basic"
 
 [footer]
 showMenu = true
@@ -49,15 +50,16 @@ showAppearanceSwitcher = true
 showScrollToTop = true
 
 [homepage]
-layout = "page"
+layout = "profile"
 showRecent = true
 showRecentItems = 5
 showMoreLink = false
 showMoreLinkDest = "/posts/"
 cardView = false
-cardViewScreenWidth = false
+cardViewScreenWidth = true
 layoutBackgroundBlur = false
 disableHeroImageFilter = false
+homepageImage = "wallpape.jpg"
 
 [article]
 showDate = true

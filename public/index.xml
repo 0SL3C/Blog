@@ -11,12 +11,12 @@
     
     <item>
       <title>Rogue Planet</title>
-      <link>/posts/article1/</link>
+      <link>/posts/rogueplanet/</link>
       <pubDate>Thu, 13 Aug 2026 17:43:04 +0100</pubDate>
       
-      <guid>/posts/article1/</guid>
+      <guid>/posts/rogueplanet/</guid>
       <description>How &lt;em&gt;NightmareEclipse&lt;/em&gt; managed to get a mixture of love/hate from security researchers, piss off Microsoft, make them speedrun a hotfix that make things even worse, then after the vulnerability was properly patched, &lt;em&gt;NightmareEclipse&lt;/em&gt; shows another ace up his sleeves. Read this blog to find out about the new 0-day &lt;strong&gt;ShieldBreak&lt;/strong&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/posts/article1/featured-anime_eyes.avif" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/posts/rogueplanet/featured-anime_eyes.avif" />
     </item>
     
   </channel>
