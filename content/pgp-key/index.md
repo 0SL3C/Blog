@@ -1,9 +1,10 @@
 ---
-title: "PGP Key"
-date: 2026-08-13T18:30:00+01:00
+title: PGP Key
+date: '2026-08-13T18:30:00+01:00'
 draft: false
 showDate: false
 showAuthor: false
+summary: ''
 ---
 
 ```

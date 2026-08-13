@@ -1,3 +1,4 @@
 ---
-title: "ViiniFX's Blog"
+title: ViiniFX's Blog
+summary: ''
 ---

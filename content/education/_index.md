@@ -1,3 +1,4 @@
 ---
-title: "Learning Material"
+title: Learning Material
+summary: ''
 ---
