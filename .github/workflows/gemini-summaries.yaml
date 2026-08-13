@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - "content/**.md"
+  workflow_dispatch:
 permissions:
   contents: write
 defaults:
@@ -20,13 +21,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Find newly added posts without a summary
+      - name: Find every post without a summary
         id: added
         run: |
-          files=$(git diff --name-only --diff-filter=A "${{ github.event.before }}" "${{ github.event.after }}" -- content | grep '\.md$' || true)
           missing=""
-          for f in $files; do
-            if [ -f "$f" ] && ! grep -q '^summary:' "$f"; then
+          for f in $(find content/posts content/education content/useful -name '*.md' 2>/dev/null); do
+            if ! grep -q '^summary:' "$f"; then
               missing="$missing $f"
             fi
           done
