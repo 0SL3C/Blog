@@ -6,7 +6,6 @@ on:
       - "content/**.md"
 permissions:
   contents: write
-  pull-requests: write
 defaults:
   run:
     shell: bash
@@ -15,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      GH_TOKEN: ${{ github.token }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -70,12 +68,3 @@ jobs:
           fi
           git commit -m "chore: add Gemini-generated summaries"
           git push origin gemini-summaries
-
-      - name: Open PR if none exists
-        if: steps.added.outputs.files != ''
-        run: |
-          if ! gh pr view gemini-summaries --json number > /dev/null 2>&1; then
-            gh pr create --base main --head gemini-summaries \
-              --title "Gemini-generated summaries" \
-              --body "Auto-generated summaries for posts that didn't have one. Review the wording, then merge to publish them (and trigger the social posts)."
-          fi
