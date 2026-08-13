@@ -1,9 +1,12 @@
 name: Generate missing summaries
 on:
-  push:
-    branches: [main]
-    paths:
-      - "content/**.md"
+  workflow_dispatch:
+    inputs:
+      posts:
+        description: 'Space-separated content file paths, or "all" to scan posts/education/useful for anything missing a summary'
+        required: false
+        default: "all"
+        type: string
 permissions:
   contents: write
 defaults:
@@ -20,27 +23,26 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Find newly added posts without a summary
-        id: added
-        run: |
-          files=$(git diff --name-only --diff-filter=A "${{ github.event.before }}" "${{ github.event.after }}" -- content | grep '\.md$' || true)
-          missing=""
-          for f in $files; do
-            if [ -f "$f" ] && ! grep -q '^summary:' "$f"; then
-              missing="$missing $f"
-            fi
-          done
-          echo "files=$missing" >> "$GITHUB_OUTPUT"
-
       - name: Set up Python
-        if: steps.added.outputs.files != ''
         uses: actions/setup-python@v6
         with:
           python-version: "3.13"
 
       - name: Install dependencies
-        if: steps.added.outputs.files != ''
         run: pip install --quiet pyyaml requests requests_oauthlib google-genai
+
+      - name: Resolve target files
+        id: added
+        run: |
+          input="${{ inputs.posts }}"
+          if [ -z "$input" ] || [ "$input" = "all" ]; then
+            files=$(python3 scripts/social_post.py find-missing content/posts content/education content/useful)
+          else
+            files="$input"
+          fi
+          echo "files<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$files" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
 
       - name: Rebase gemini-summaries branch onto latest main
         if: steps.added.outputs.files != ''

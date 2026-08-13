@@ -1,12 +1,9 @@
 name: Post new content to socials
 on:
-  workflow_run:
-    workflows: ["Build and deploy"]
-    types: [completed]
   workflow_dispatch:
     inputs:
-      post_path:
-        description: "Path to the post's content file to (re)post, e.g. content/posts/rogueplanet/index.md"
+      posts:
+        description: "Space-separated content file paths to post, e.g. content/posts/rogueplanet/index.md content/education/htb/_index.md"
         required: true
         type: string
 permissions:
@@ -16,9 +13,6 @@ defaults:
     shell: bash
 jobs:
   post:
-    if: >
-      github.event_name == 'workflow_dispatch' ||
-      github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     env:
       SITE_URL: ${{ vars.SITE_URL }}
@@ -35,7 +29,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
         with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && github.ref || github.event.workflow_run.head_sha }}
           fetch-depth: 0
 
       - name: Set up Python
@@ -46,15 +39,8 @@ jobs:
       - name: Install dependencies
         run: pip install --quiet pyyaml requests requests_oauthlib google-genai
 
-      - name: Post (manual rerun)
-        if: github.event_name == 'workflow_dispatch'
-        run: python3 scripts/social_post.py dispatch "${{ inputs.post_path }}"
-
-      - name: Post (sync against previous deploy)
-        if: github.event_name == 'workflow_run'
-        run: |
-          sha="${{ github.event.workflow_run.head_sha }}"
-          python3 scripts/social_post.py sync "${sha}~1" "${sha}"
+      - name: Post
+        run: python3 scripts/social_post.py dispatch ${{ inputs.posts }}
 
       - name: Commit generated summaries
         if: always()

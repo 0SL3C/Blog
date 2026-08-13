@@ -2,7 +2,11 @@
 """
 Posts a new blog entry's title/summary/link to X, LinkedIn, and Instagram.
 
-Three modes, selected by CLI arg:
+Four modes, selected by CLI arg:
+  find-missing <dir> [<dir> ...]     Prints .md files under the given dirs that
+                                      have no summary (or an empty one) and
+                                      aren't drafts, one per line.
+
   generate  <file> [<file> ...]      Writes a Gemini summary into front matter
                                       for files that don't have one yet. Does
                                       NOT post anywhere. Used by the
@@ -231,6 +235,25 @@ def post_instagram(title, summary, url, img_url):
     print(f"  [instagram] posted: {publish.json()['id']}")
 
 
+def find_missing_summaries(dirs):
+    """Walks `dirs` and returns .md files with no summary - treating a present
+    but empty `summary: ""` the same as a missing key, since a plain text
+    grep for `^summary:` can't tell those apart."""
+    paths = []
+    for d in dirs:
+        for root, _, files in os.walk(d):
+            for name in files:
+                if not name.endswith(".md"):
+                    continue
+                path = os.path.join(root, name)
+                meta, _ = load_doc(path)
+                if meta.get("draft"):
+                    continue
+                if not meta.get("summary"):
+                    paths.append(path)
+    return sorted(paths)
+
+
 def generate_only(path):
     """Writes a Gemini summary into `path`'s front matter if it doesn't have
     one. Does not post anywhere - used by the gemini-summaries workflow."""
@@ -342,6 +365,11 @@ def main():
         print(__doc__)
         sys.exit(2)
     mode, rest = sys.argv[1], sys.argv[2:]
+
+    if mode == "find-missing":
+        for path in find_missing_summaries(rest):
+            print(path)
+        sys.exit(0)
 
     if mode == "generate":
         for path in rest:
