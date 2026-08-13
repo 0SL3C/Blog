@@ -7,7 +7,77 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 </copyright>
-    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Apr 2026 18:20:00 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Command-Injection</title>
+      <link>/tags/command-injection/</link>
+      <pubDate>Mon, 13 Apr 2026 18:20:00 +0100</pubDate>
+      
+      <guid>/tags/command-injection/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Exploit.education</title>
+      <link>/tags/exploit.education/</link>
+      <pubDate>Mon, 13 Apr 2026 18:20:00 +0100</pubDate>
+      
+      <guid>/tags/exploit.education/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Privilege-Escalation</title>
+      <link>/tags/privilege-escalation/</link>
+      <pubDate>Mon, 13 Apr 2026 18:20:00 +0100</pubDate>
+      
+      <guid>/tags/privilege-escalation/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Path-Hijacking</title>
+      <link>/tags/path-hijacking/</link>
+      <pubDate>Mon, 13 Apr 2026 18:10:00 +0100</pubDate>
+      
+      <guid>/tags/path-hijacking/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Suid</title>
+      <link>/tags/suid/</link>
+      <pubDate>Mon, 13 Apr 2026 18:00:00 +0100</pubDate>
+      
+      <guid>/tags/suid/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Osint</title>
+      <link>/tags/osint/</link>
+      <pubDate>Mon, 02 Feb 2026 18:50:00 +0100</pubDate>
+      
+      <guid>/tags/osint/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Forums</title>
+      <link>/tags/forums/</link>
+      <pubDate>Sun, 01 Feb 2026 18:40:00 +0100</pubDate>
+      
+      <guid>/tags/forums/</guid>
+      <description></description>
+      
+    </item>
     
   </channel>
 </rss>

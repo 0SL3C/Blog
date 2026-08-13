@@ -1,0 +1,81 @@
+name: Generate missing summaries
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**.md"
+permissions:
+  contents: write
+  pull-requests: write
+defaults:
+  run:
+    shell: bash
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Find newly added posts without a summary
+        id: added
+        run: |
+          files=$(git diff --name-only --diff-filter=A "${{ github.event.before }}" "${{ github.event.after }}" -- content | grep '\.md$' || true)
+          missing=""
+          for f in $files; do
+            if [ -f "$f" ] && ! grep -q '^summary:' "$f"; then
+              missing="$missing $f"
+            fi
+          done
+          echo "files=$missing" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Python
+        if: steps.added.outputs.files != ''
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        if: steps.added.outputs.files != ''
+        run: pip install --quiet pyyaml requests requests_oauthlib google-genai
+
+      - name: Rebase gemini-summaries branch onto latest main
+        if: steps.added.outputs.files != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin gemini-summaries > /dev/null; then
+            git checkout -B gemini-summaries origin/gemini-summaries
+            git merge --no-edit origin/main
+          else
+            git checkout -B gemini-summaries origin/main
+          fi
+
+      - name: Generate summaries
+        if: steps.added.outputs.files != ''
+        run: python3 scripts/social_post.py generate ${{ steps.added.outputs.files }}
+
+      - name: Commit and push
+        if: steps.added.outputs.files != ''
+        run: |
+          git add content
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git commit -m "chore: add Gemini-generated summaries"
+          git push origin gemini-summaries
+
+      - name: Open PR if none exists
+        if: steps.added.outputs.files != ''
+        run: |
+          if ! gh pr view gemini-summaries --json number > /dev/null 2>&1; then
+            gh pr create --base main --head gemini-summaries \
+              --title "Gemini-generated summaries" \
+              --body "Auto-generated summaries for posts that didn't have one. Review the wording, then merge to publish them (and trigger the social posts)."
+          fi

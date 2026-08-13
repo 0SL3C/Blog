@@ -1,0 +1,10 @@
+{{ $recentArticles := .Site.Params.homepage.showRecentItems | default 5 }}
+
+{{ $candidates := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ $items := partial "functions/collapse-series.html" $candidates }}
+
+<section class="space-y-10 w-full">
+  {{ range first $recentArticles $items }}
+    {{ partial "article-link/simple.html" .page }}
+  {{ end }}
+</section>

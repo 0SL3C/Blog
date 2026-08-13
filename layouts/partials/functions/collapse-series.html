@@ -1,0 +1,31 @@
+{{/* Takes a slice of Pages. Pages that share a "series" front-matter value
+     collapse into a single entry pointing at their parent section's _index.md
+     (e.g. education/nebula/_index.md), dated by the newest member of that
+     group (so a fresh addition bumps it in date-sorted listings). Pages
+     without a series pass through as-is.
+     Returns a slice of dict{ "page" Page, "date" int64 } sorted newest-first. */}}
+{{ $pages := . }}
+{{ $items := slice }}
+{{ $seenSeries := slice }}
+{{ range $pages }}
+  {{ $p := . }}
+  {{ if $p.Params.series }}
+    {{ $seriesName := index $p.Params.series 0 }}
+    {{ if not (in $seenSeries $seriesName) }}
+      {{ $seenSeries = $seenSeries | append $seriesName }}
+      {{ $group := $p.Parent }}
+      {{ if $group }}
+        {{ $latestDate := $group.Date.Unix }}
+        {{ range first 1 $group.Pages.ByDate.Reverse }}
+          {{ $latestDate = .Date.Unix }}
+        {{ end }}
+        {{ $items = $items | append (dict "page" $group "date" $latestDate) }}
+      {{ else }}
+        {{ $items = $items | append (dict "page" $p "date" $p.Date.Unix) }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ $items = $items | append (dict "page" $p "date" $p.Date.Unix) }}
+  {{ end }}
+{{ end }}
+{{ return (sort $items "date" "desc") }}

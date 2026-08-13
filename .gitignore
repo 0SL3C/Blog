@@ -1,2 +1,5 @@
 .hugo_build.lock
 public/
+__pycache__/
+*.pyc
+quartz-v4

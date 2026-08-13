@@ -4,13 +4,21 @@ none = "none"
 [[main]]
 name = "/"
 pageRef = "/"
-identifier = "ilc5G7Ndcy"
-weight = 9_999
+weight = 10
 
 [[main]]
 name = "/posts"
 pageRef = "posts"
-identifier = "V1LGWN2iGC"
+weight = 11
+
+[[main]]
+name = "/useful"
+pageRef = "useful"
+weight = 12
+
+[[main]]
+name = "/learning-material"
+pageRef = "/education"
 weight = 9_999
 
 [[footer]]

@@ -1,3 +1,4 @@
+mainSections = ["posts", "education", "useful"]
 colorScheme = "bloody"
 defaultAppearance = "light"
 autoSwitchAppearance = true
@@ -101,7 +102,7 @@ showLikes = true
 showTableOfContents = false
 showCards = false
 orderByWeight = false
-groupByYear = true
+groupByYear = false
 cardView = false
 cardViewScreenWidth = false
 constrainItemsWidth = false

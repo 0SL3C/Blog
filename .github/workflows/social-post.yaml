@@ -1,0 +1,70 @@
+name: Post new content to socials
+on:
+  workflow_run:
+    workflows: ["Build and deploy"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      post_path:
+        description: "Path to the post's content file to (re)post, e.g. content/posts/rogueplanet/index.md"
+        required: true
+        type: string
+permissions:
+  contents: write
+defaults:
+  run:
+    shell: bash
+jobs:
+  post:
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: ${{ vars.SITE_URL }}
+      X_API_KEY: ${{ secrets.X_API_KEY }}
+      X_API_SECRET: ${{ secrets.X_API_SECRET }}
+      X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+      X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+      LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+      LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.ref || github.event.workflow_run.head_sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install --quiet pyyaml requests requests_oauthlib google-genai
+
+      - name: Post (manual rerun)
+        if: github.event_name == 'workflow_dispatch'
+        run: python3 scripts/social_post.py dispatch "${{ inputs.post_path }}"
+
+      - name: Post (sync against previous deploy)
+        if: github.event_name == 'workflow_run'
+        run: |
+          sha="${{ github.event.workflow_run.head_sha }}"
+          python3 scripts/social_post.py sync "${sha}~1" "${sha}"
+
+      - name: Commit generated summaries
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: add Gemini-generated summary [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "no summary changes to commit"
+          fi

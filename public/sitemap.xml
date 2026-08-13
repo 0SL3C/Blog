@@ -3,6 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>/pgp-key/</loc>
+    <lastmod>2026-08-13T18:30:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/</loc>
+    <lastmod>2026-08-13T18:30:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>/posts/</loc>
     <lastmod>2026-08-13T17:43:04+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -15,8 +27,68 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/</loc>
-    <lastmod>2026-08-13T17:43:04+01:00</lastmod>
+    <loc>/education/htb/</loc>
+    <lastmod>2026-04-14T18:20:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/education/</loc>
+    <lastmod>2026-04-14T18:20:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/education/nebula/</loc>
+    <lastmod>2026-04-13T18:20:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/education/nebula/nebula-level-02/</loc>
+    <lastmod>2026-04-13T18:20:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/education/nebula/nebula-level-01/</loc>
+    <lastmod>2026-04-13T18:10:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/education/htb/htb-01/</loc>
+    <lastmod>2026-04-13T18:00:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/education/htb/htb-02/</loc>
+    <lastmod>2026-04-13T18:00:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/education/nebula/nebula-level-00/</loc>
+    <lastmod>2026-04-13T18:00:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/useful/osint-resources/</loc>
+    <lastmod>2026-02-02T18:50:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/useful/</loc>
+    <lastmod>2026-02-02T18:50:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>/useful/hacking-forums/</loc>
+    <lastmod>2026-02-01T18:40:00+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

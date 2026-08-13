@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 </copyright>
-    <lastBuildDate>Thu, 13 Aug 2026 17:43:04 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Aug 2026 18:30:00 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PGP Key</title>
+      <link>/pgp-key/</link>
+      <pubDate>Thu, 13 Aug 2026 18:30:00 +0100</pubDate>
+      
+      <guid>/pgp-key/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Rogue Planet</title>
@@ -15,8 +25,78 @@
       <pubDate>Thu, 13 Aug 2026 17:43:04 +0100</pubDate>
       
       <guid>/posts/rogueplanet/</guid>
-      <description>How &lt;em&gt;NightmareEclipse&lt;/em&gt; managed to get a mixture of love/hate from security researchers, piss off Microsoft, make them speedrun a hotfix that make things even worse, then after the vulnerability was properly patched, &lt;em&gt;NightmareEclipse&lt;/em&gt; shows another ace up his sleeves. Read this blog to find out about the new 0-day &lt;strong&gt;ShieldBreak&lt;/strong&gt;</description>
+      <description>How &lt;strong&gt;NightmareEclipse&lt;/strong&gt; managed to get a mixture of love/hate from security researchers, piss off Microsoft, make them speedrun a hotfix that make things even worse, then after the vulnerability was properly patched, &lt;em&gt;NightmareEclipse&lt;/em&gt; shows another ace up his sleeves. Read this blog to find out about the new 0-day &lt;strong&gt;ShieldBreak&lt;/strong&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/posts/rogueplanet/featured-anime_eyes.avif" />
+    </item>
+    
+    <item>
+      <title>Nebula: Level 02</title>
+      <link>/education/nebula/nebula-level-02/</link>
+      <pubDate>Mon, 13 Apr 2026 18:20:00 +0100</pubDate>
+      
+      <guid>/education/nebula/nebula-level-02/</guid>
+      <description>Abusing an unsanitized &lt;strong&gt;$USER&lt;/strong&gt; variable passed straight into &lt;code&gt;system()&lt;/code&gt; to inject arbitrary commands and escalate to &lt;code&gt;flag02&lt;/code&gt;.</description>
+      
+    </item>
+    
+    <item>
+      <title>Nebula: Level 01</title>
+      <link>/education/nebula/nebula-level-01/</link>
+      <pubDate>Mon, 13 Apr 2026 18:10:00 +0100</pubDate>
+      
+      <guid>/education/nebula/nebula-level-01/</guid>
+      <description>Hijacking the &lt;strong&gt;PATH&lt;/strong&gt; environment variable to trick a SUID binary into running our own &lt;code&gt;echo&lt;/code&gt; and popping a root shell.</description>
+      
+    </item>
+    
+    <item>
+      <title>HTB: Level 00</title>
+      <link>/education/htb/htb-01/</link>
+      <pubDate>Mon, 13 Apr 2026 18:00:00 +0100</pubDate>
+      
+      <guid>/education/htb/htb-01/</guid>
+      <description>Finding a &lt;strong&gt;SUID&lt;/strong&gt; binary owned by &lt;code&gt;flag00&lt;/code&gt; and abusing it to escalate privileges on exploit.education&amp;rsquo;s Nebula VM.</description>
+      
+    </item>
+    
+    <item>
+      <title>HTB: Level 01</title>
+      <link>/education/htb/htb-02/</link>
+      <pubDate>Mon, 13 Apr 2026 18:00:00 +0100</pubDate>
+      
+      <guid>/education/htb/htb-02/</guid>
+      <description>Finding a &lt;strong&gt;SUID&lt;/strong&gt; binary owned by &lt;code&gt;flag00&lt;/code&gt; and abusing it to escalate privileges on exploit.education&amp;rsquo;s Nebula VM.</description>
+      
+    </item>
+    
+    <item>
+      <title>Nebula: Level 00</title>
+      <link>/education/nebula/nebula-level-00/</link>
+      <pubDate>Mon, 13 Apr 2026 18:00:00 +0100</pubDate>
+      
+      <guid>/education/nebula/nebula-level-00/</guid>
+      <description>Finding a &lt;strong&gt;SUID&lt;/strong&gt; binary owned by &lt;code&gt;flag00&lt;/code&gt; and abusing it to escalate privileges on exploit.education&amp;rsquo;s Nebula VM.</description>
+      
+    </item>
+    
+    <item>
+      <title>OSINT Resources</title>
+      <link>/useful/osint-resources/</link>
+      <pubDate>Mon, 02 Feb 2026 18:50:00 +0100</pubDate>
+      
+      <guid>/useful/osint-resources/</guid>
+      <description>A curated toolbox for OSINT investigations — username/email/IP lookups, social graph mapping, metadata, and reverse-image search, organized around &lt;strong&gt;verification questions&lt;/strong&gt; instead of a flat link dump.</description>
+      
+    </item>
+    
+    <item>
+      <title>Hacking Forums</title>
+      <link>/useful/hacking-forums/</link>
+      <pubDate>Sun, 01 Feb 2026 18:40:00 +0100</pubDate>
+      
+      <guid>/useful/hacking-forums/</guid>
+      <description>A running list of hacking, leak, and carding forums — which are &lt;strong&gt;established&lt;/strong&gt;, which are just noise, and which are &lt;strong&gt;dangerous&lt;/strong&gt; honeypots to avoid.</description>
+      
     </item>
     
   </channel>
